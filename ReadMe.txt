@@ -1,12 +1,16 @@
 Implementation of Rate Adaptation Algorithms for DASH client:
 
 Total 6 rate adaptation algorithms have been implemented, which are as follows:
-1) OSMF: It is the osmf implementation (based on chunk fetch time) taken from this paper.
+1) OSMF: It is the osmf implementation (based on chunk fetch time) taken from this paper: 
+	Mok, Ricky KP, et al. "QDASH: a QoE-aware DASH system." Proceedings of the 3rd Multimedia Systems Conference. ACM, 2012.
 2) OSMF Modified: It is modified version of 1, which uses bandwidth instead of the fetch time.
-3) KM Algo: It follows the KM algo from this paper.
-4) Buffer-based: It follows the purely buffer-based approach from this paper.
-5) PID-based: It follows the 1st algo in this paper.
-6) Smooth-Agile-based: It follows the 2nd algo in this paper.
+3) KM Algo: It follows the KM algo from this paper:
+	Miller, Konstantin, et al. "Adaptation algorithm for adaptive streaming over HTTP." Packet Video Workshop (PV), 2012 19th International. IEEE, 2012.
+4) Buffer-based: It follows the purely buffer-based approach from this paper:
+	Huang, Te-Yuan, Ramesh Johari, and Nick McKeown. "Downton abbey without the hiccups: Buffer-based rate adaptation for http video streaming." Proceedings of the 2013 ACM SIGCOMM workshop on Future human-centric multimedia networking. ACM, 2013.
+5) PID-based: It follows the 1st algo given in this paper:
+	Tian, Guibin, and Yong Liu. "Towards agile and smooth video adaptation in dynamic HTTP streaming." Proceedings of the 8th international conference on Emerging networking experiments and technologies. ACM, 2012.
+6) Smooth-Agile-based: It follows the 2nd algo given in the previous paper.
 
 Each of the implementations are given in seperate folders.
 
