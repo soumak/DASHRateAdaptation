@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<!-- Media streaming example
+  Reads an .mpd file created using mp4box and plays the file
+-->     
+<head>
+  <meta charset="utf-8" />
+  <title>Media streaming example</title>
+  <style>
+    /* CSS code to format the parameter list and elements */
+    body {
+      font-family:'Segoe UI';
+      background-color:#f0f0f0;
+    }
+    /* Set up parameter and video display*/
+    #myDiv {
+      /*display: block;*/
+      width: 600px;
+      height: 400px;
+      overflow: auto;      
+    }
+    /* Zoom or shrink video based on the native size of the video*/
+    video {
+      width:640px;
+      height:480px;
+      border:1px black solid;
+    }
+    #description {
+      display: block;
+      width:640px;      
+    }
+
+    #grid {
+      display: -ms-grid;
+      -ms-grid-columns: 35% 65%;
+      -ms-grid-rows: 1fr;
+    }    
+
+    #col1 {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+      padding:20px;
+    }
+    #col2 {
+      -ms-grid-row: 1;
+      -ms-grid-column: 2;
+    }
+    #curInfo{
+      display:none;
+    }
+    #videoStats{
+      display:none;
+    }
+  </style>
+</head>
+
+<body>     
+  <h1>Simple MPEG-DASH Streaming player</h1>
+
+  <div id="grid">
+    <div id="col1">
+    <label>Enter .mpd file: 
+        <input type="text" id="filename" value="DashServer\\bunny_dash.xml" />
+      </label> <button id="load">Play</button><br />
+           
+      <!-- Some areas to display info and content -->
+      <div id = "videoStats">
+       <h3>Video Information:</h3>
+        <ul>
+          <li>Duration: <span id="videoHour"></span> Hr <span id="videoMin"> </span> Min  <span id="videoSec"> </span> Sec </li>
+        </ul>
+      </div>
+      <div id="curInfo"> 
+        <h3>Current values:</h3>
+        <ul>
+          <li>Fragment Number: <span id="curIndex"></span> of <span id="numIndexes"></span></li>
+           <li>Level: <span id="curLevel"></span> Bitrate: <span id="curBitrate"></span></li>
+          <li>Segment length(secs): <span id="segLength"></span></li>
+          <li>Video time: <span id="curTime"></span></li>
+        </ul>
+      </div>
+      <div id="mydiv">
+        <span id="myspan"><br />This demo requires Internet Explorer 11</span>
+      </div>
+      <div id="videoInfo"></div> 
+    </div>
+    <div id="col2">
+      <!-- Video element -->
+      <video id="myVideo" autoplay="autoplay" >No video available</video>
+    </div>
+  </div>
+<script src="global_variables.js"></script>
+<script src="displayNextParameters.js"></script>
+<script src="videoEvents.js"></script>
+<script src="manifestParser.js"></script>
+<script src="displayData.js"></script>
+<script src="setupVideo.js"></script>
+<script src="initFragment.js"></script>
+<script src="checkBuffering.js"></script>
+<script src="polling.js"></script>
+<script src="playSegment.js"></script>
+<script src="next_bit_rate.js"></script>
+<script src="sara.js"></script>
+<script src="printStats.js"></script>
+<script src="displayCurrentParameters.js"></script>
+
+  </body>
+</html>
